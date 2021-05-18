@@ -1,0 +1,29 @@
+.device-info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+
+    font-size: 0.6rem;
+    font-weight: 400;
+}
+
+.patch-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.patch-info span:first-child {
+    margin-right: 0.2rem;
+}
+
+.base-info {
+    display: flex;
+    align-items: center;
+}
+.base-info span {
+    margin-right: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

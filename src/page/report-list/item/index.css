@@ -1,0 +1,33 @@
+.divider-line{
+    width: 100%;
+    height: 1px;
+    background: #eeeeee;
+}
+
+.item-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.item-container2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: white;
+    width: 100%;
+}
+
+.user-style{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-self: flex-end;
+}
+
+.gray-text{
+    color: #A9ADAD;
+}

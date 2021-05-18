@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <title>React App</title>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+
+</body>
+<script src="https://www.html.cn/doc/requirejs/"></script>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://open.home.komect.com/jssdk/hejia-1.5.0.min.js"></script>
+
+<script>
+  Hejia.ready(function () {
+    // 页面加载完成后要立即调用Hejia全局对象执行的代码逻辑写这里
+    alert("hejia ready.")
+    window.Hejia = Hejia;
+  });
+  var ecgDataList = new Array();
+  var listeners = new Array();
+
+  console.log("___ in html");
+  window.registerListens = function (lst) {
+    listeners.push(lst);
+  }
+
+  //test方法
+  function callByAndroid(params) {
+    // var ecgDatas = Str2Bytes(params);
+    var ecgDatas = [...params];
+    //window.ecgDataList = ecgDataList; //app传过来的心电数据,模拟推送的数据，待完成
+    let names = listeners.map(e => e.name).join(",")
+    //window.android.addLog(names);
+    listeners.forEach(lst => lst.onMessage(ecgDatas));
+  };
+
+  function Str2Bytes(str) {
+    var pos = 0;
+
+    var len = str.length;
+
+    if (len % 2 != 0)
+
+    {
+      return null;
+
+    }
+
+    len /= 2;
+
+    var hexA = new Array();
+
+    for (var i = 0; i < len; i++)
+
+    {
+      var s = str.substr(pos, 2);
+
+      var v = parseInt(s, 16);
+
+      hexA.push(v);
+
+      pos += 2;
+
+    }
+    return hexA;
+  }
+
+  function Bytes2Str(arr) {
+    var str = "";
+
+    for (var i = 0; i < arr.length; i++)
+
+    {
+      var tmp = arr[i].toString(16);
+
+      if (tmp.length == 1)
+
+      {
+        tmp = "0" + tmp;
+
+      }
+
+      str += tmp;
+
+    }
+
+    return str;
+
+  }
+</script>
+
+</html>

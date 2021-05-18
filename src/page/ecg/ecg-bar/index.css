@@ -1,0 +1,155 @@
+@import url(../device-info/index.css);
+@import url(../index.css);
+.ecg-bar {
+    height: calc(20px * 10 + 2px);
+    color: transparent;
+    border: 1px solid #333333;
+
+    position: relative;
+    display: flex;
+    justify-content: stretch;
+    align-items: stretch;
+    box-sizing: border-box;
+
+    margin-bottom: 10px;
+    width: 100%;
+    background-color: #2e4d79;
+}
+
+.ecg-bar #left-side {
+    width: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    background-color: transparent;
+}
+
+.ecg-bar #left-side #close-button-div {
+    width: 100%;
+    height: 32px;
+}
+.ecg-bar #left-side #close-button-div button {
+    border: none;
+    background-color: #37475A;
+    font-size: 14px;
+    font-weight: 400;
+    color: #83A3C7;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+}
+
+
+.record-info {
+    width: 100%;
+    height: calc(20px * 10 + 2px - 32px); /* bar height minus button height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: transparent;
+}
+.user-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.user-info .normal {
+    font: 18px normal;
+}
+.user-info .bigger {
+    font: 24px bold;
+}
+.ecg-bar .user-info span {
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 0 8px;
+}
+.ecg-bar .user-info .block-item {
+    width: 8rem;
+}
+
+.ecg-unit-label {
+    color: #00FF06;
+    font: 1rem normal;
+    margin-top: 10px;
+}
+.ecg-value-label {
+    color: #00FF06;
+    font: 2.8rem medium;
+}
+.ecg-graph {
+    position: relative;
+    width: 100%;
+    background-color: transparent;
+}
+
+.info-container {
+    position: absolute;
+    top: 0.1rem;
+    right: 0.1rem;
+    width: 100%;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.value-info-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.value-info-container .ant-tag {
+    margin-top: 3px;
+}
+
+
+.ecg-state-ele {
+    font-size: 0.5rem;
+    font-weight: 400;
+    margin-top: 3px;
+}
+
+.device-state-container {
+    position: absolute;
+    left: 8rem;
+    bottom: 0.1rem;
+    width: 50%;
+
+    color: white;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 700;
+
+    display: flex;
+    align-items: center;
+
+    padding-left: 0.5rem;
+    padding-bottom: 0.2rem;
+}
+.device-state-container span {
+    margin: auto 0.3rem;
+}
+
+.ecg-unit-container {
+    position: absolute;
+    right: 0.1rem;
+    bottom: 0.1rem;
+
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+.ecg-unit-container span {
+    margin: auto 0.4rem;
+}
+
+.alert-text {
+    color: #FF0000;
+}
+
