@@ -1,14 +1,9 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import { Button, message, Modal, Tag, Typography } from "antd";
 import ECGGrid from "../../../util/ecg/grid";
 import ECGGraph from "../../../util/ecg/ecg";
 import "./index.css";
-import measureDataCenter from "../../../network/measureDataCenter";
-import topic from '../../../topic';
-import Eventutil from '../../../util/EventUtil';
 import LogUtil from "../../../util/LogUitl";
-import BleUtil from "../../../util/BleUtil"
 
 const requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
     window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
@@ -21,17 +16,12 @@ class ECGBar extends React.Component {
         this.ecgRef = React.createRef();
         this.gridRef = React.createRef();
         this.barEcgGraphRef = React.createRef();
-
-        setTimeout(() => {
-            console.log(">>>wi", window.registerListens);
-            window.registerListens(this);
-        }, 2000);
     }
 
     onMessage = val => {
         LogUtil.d("On receive message");
         this.plotter.appendNewData(val);
-     }
+    }
 
     state = {
         graphWidth: 0,
@@ -109,15 +99,13 @@ class ECGBar extends React.Component {
         cancelAnimationFrame(this.aniReq);
         window.removeEventListener("focus", this.onPageFocus);
         window.removeEventListener("resize", this.onBrowserWindowResize);
-        //measureDataCenter.removeRegister(this);
     }
 
     render() {
-        const { graphWidth, graphHeight, ecgData, ecgState, ecgBaseState } = this.state;
+        const { graphWidth, graphHeight } = this.state;
         const positonStyle = { position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)" };
         return (
-            <a className="ecg-bar">
-
+            <a className="ecg-bar" href="/#">
                 <div ref={el => this.barEcgGraphRef = el} className="ecg-graph">
                     <canvas
                         ref={el => this.gridRef = el}

@@ -1,33 +1,58 @@
-.divider-line{
+.divider-line {
     width: 100%;
     height: 1px;
     background: #eeeeee;
 }
 
-.item-container{
+.report-item {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     padding-left: 15px;
     padding-right: 15px;
+    background-color: #F2F4F4;
 }
 
-.item-container2{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background: white;
+.report-time{
     width: 100%;
-}
-
-.user-style{
-    width: 100%;
+    height: 40px;
     display: flex;
     flex-direction: row;
-    justify-self: flex-end;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    color: #c4c4c4;
+    margin-top: 8px;
+    background-color: #F2F4F4;
 }
 
-.gray-text{
+.report-info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: white;
+    border-radius: 8px;
+    padding:10px;
+}
+
+.report-user {
+    color: #c4c4c4;
+    align-self: flex-end;
+}
+
+.report-heartRate{
+    color: #333333;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.report-queryDetail{
+    color: #00BD79;
+    align-self: flex-end;
+    margin-top:8px;
+}
+
+.gray-text {
     color: #A9ADAD;
 }

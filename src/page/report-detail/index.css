@@ -1,0 +1,165 @@
+.rootContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f5f5;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.reportUser-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 10px;
+}
+
+.report-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reportIdTime {
+    display: flex;
+    flex-direction: column;
+}
+
+.reportDeviceDuration {
+    display: flex;
+    flex-direction: column;
+}
+
+.result-containerRoot {
+    background-color: #f5f5f5;
+    padding: 15px;
+}
+
+.result-container {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.resultConclusion {
+    background-color: #00BD79;
+    color: white;
+    font-size: 16px;
+    border-radius: 10px;
+    margin-top: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.resultConclusionContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10px;
+}
+
+.result-itemDetail {
+    background-color: #FFEFF0;
+    color: #FF8185;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 5px;
+    margin: 5px;
+}
+
+.result-detailContainer {
+    background-color: #f5f5f5;
+    padding: 15px;
+}
+
+.result-detailInnerContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.rateIndicator {
+    width: 100%;
+    padding-left: 8px;
+    font-size: 16px;
+    font-style: oblique;
+}
+
+.heartInfoFirstLine {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.heartInfoItem{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.heardInfoItemTitle{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 15px;
+}
+
+.myDivider{
+    background-color: #00BD79;
+    width: 5px;
+    height: 20px;
+}
+
+.heartInfoItemTip{
+    width: 100%;
+    font-size: 12px;
+    color: #A8ABAB;
+    padding-bottom: 20px;
+    padding-left:15px
+}
+
+.heartInfoSecondLineRoot{
+    background-color: #f5f5f5;
+    padding: 15px;
+}
+
+.heartInfoSecondLine {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+}
+
+.reviewReport{
+    width: 100%;
+    background-color: #00BD79;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

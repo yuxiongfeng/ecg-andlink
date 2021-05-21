@@ -1,62 +1,36 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import { withRouter } from 'react-router';
-import measureDataCenter from '../../network/measureDataCenter';
-import topic from '../../topic';
-import Eventutil from '../../util/EventUtil';
-import LogUtil from '../../util/LogUitl';
 import "./index.css"
 import ECGBar from "../ecg/ecg-bar";
+import { Button } from 'antd';
+//Ant Design 样式文件
+import 'antd/dist/antd.css';
+import path from '../../path'
 
 class Measure extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
-    componentDidMount() {
-        // const Hejia = require("https://open.home.komect.com/jssdk/hejia-1.5.0.min.js");
-        // console.log("---Hejia", Hejia);
-        // Hejia.addLog("dfffff");
-    }
-
-    connectDevice = () => {
+    getDeviceInfo = () => {
         var params = { deviceId: 'CMCC-589239-546C0E7AD20E' };
-        // window.Hejia.startAndlink(function (deviceId) {
-        //     // deviceId - String => The id of the connected andlink device.
-        //     alert(deviceId);
-        // }, function (msg, obj) {
-        //     // msg - String => error message
-        //     // obj – Object => { resultCode:!0, resultCodeMessage: string }
-        //     alert(msg);
-        //     alert(obj.resultCode + obj.resultCodeMessage);
-        // });
+        //从原生app获取数据
         window.Hejia.getDeviceInfo(params, function (obj) {
-            // obj - Object => {device：{...}, location: {...}}.
             alert(JSON.stringify(obj));
         }, function (msg, obj) {
-            // msg - String => error message
-            // obj – Object => { resultCode:!0, resultCodeMessage: string }
             alert(msg);
             alert(obj.resultCode + obj.resultCodeMessage);
         });
+    }
 
-        // window.Hejia.getCurrentParam({ paramName: ["softVersion"], deviceId: 'CMCC-589239-546C0E7AD20E'}, function (device) {
-        //     // device - Object => device object.
-        //     alert(device.id);
-        // }, function (msg, obj){
-        //     // msg - String => error message
-        //     // obj – Object => { resultCode:!0, resultCodeMessage: string }
-        //     alert(msg);
-        //     alert(obj.resultCode + obj.resultCodeMessage);
-        // });
+    goDetail = () => {
+        this.props.history.push(path.reportDetail);
     }
 
     render() {
-        var params = JSON.stringify(this.props);
         return <>
             <div className="canvas-container">
                 <ECGBar />
-                <div onClick={this.connectDevice}>连接设备</div>
+            </div>
+            <div className="otherContainer">
+                <Button onClick={this.connectDevice} type="primary">获取设备info</Button>
+                <Button type="primary" style={{ marginLeft: 10 }} onClick={this.goDetail}>go detail</Button>
             </div>
         </>;
     }
